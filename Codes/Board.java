@@ -40,6 +40,7 @@ public class Board {
         return S.concat(S.concat(S));
     }
 
+  // To check winner
     static String checkWinner() {
 
         for (int a = 0; a < 8; a++) {
@@ -72,7 +73,6 @@ public class Board {
                     break;
             }
 
-            // For P1 winner
             // For P1 winner
             if (line.equals(tripleSym(p1.getCharacter()))) {
                 p1.setScore(1);
