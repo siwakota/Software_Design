@@ -108,4 +108,32 @@ public class Board {
         initializeBoard();
         printBoard();
  }
+      
+      while(true)
+      {
+         System.out.print("Please enter 1 to enter the game or 0 to exit the game:  ");
+        try
+        {
+          int val = sc.nextInt();
+          if(val == 0)
+          {
+             System.out.println("You have exited from the game. See you again.");
+             break;
+          }
+          else if(val == 1)
+          {
+            //Enter the game.
+          }
+          else
+          {
+            //Keep on running the loop until either 1 or 0 is entered.
+            continue;
+          }
+        }
+        catch (InputMismatchException e) 
+            {
+                sc.nextLine(); // Clears Buffer
+                continue;       // Continues lopp until proper input type is entered.
+            }
+      }
 }
