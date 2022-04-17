@@ -1,6 +1,12 @@
 
 public class Board {
   
-  //Here goes all the codes for the game to run.
-  //New edit
+ public void startGame() {
+   
+    Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to 3x3 TIC TAC TOE");
+        board = new String[9];
+        initializeBoard();
+        printBoard();
+ }
 }
