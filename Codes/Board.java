@@ -122,7 +122,28 @@ public class Board {
           }
           else if(val == 1)
           {
-            //Enter the game.
+            
+                        System.out.print("Please enter the name of the player 1: ");
+                        String player1Name = sc.nextLine();
+                        System.out.print("Please enter your character: ");
+                        char symbol1 = sc.next().charAt(0);
+                        String sym1 = Character.toString(symbol1);
+                        sc.nextLine();
+                        System.out.print("Please enter the name of the player 2: ");
+                        String player2Name = sc.nextLine();
+                        System.out.print("Please enter your character: ");
+                        char symbol2 = sc.next().charAt(0);
+                        String sym2 = Character.toString(symbol2);
+                        sc.nextLine();
+                        p1.setName(player1Name);
+                        p1.setCharacter(sym1);
+                        p2.setName(player2Name);
+                        p2.setCharacter(sym2);
+                        System.out.println(p1.getName() + " vs. " + p2.getName());
+                        System.out.println("--------------------");
+                        turn = p1.getCharacter();
+
+                        Board.printBoard();
           }
           else
           {
