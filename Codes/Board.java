@@ -1,7 +1,16 @@
 
 public class Board {
   
-static String[] board;
+  // New players p1 and p2 of Player class added.
+    static Player p1 = new Player();
+    static Player p2 = new Player();
+
+  // Store name, and turns of the players.
+    String winner = null;
+    static String name, turn;
+  
+  //To store numbers in the board's boxes.
+    static String[] board;
 
     static void printBoard() {
         System.out.println("|---|---|---|");
@@ -19,18 +28,15 @@ static String[] board;
         System.out.println("|---|---|---|");
     }
 
+  //Method to populate the initial board with numbers as position.
     static void initializeBoard() {
         for (int a = 0; a < 9; a++) {
             board[a] = String.valueOf(a + 1);
         }
     }
-  static Player p1 = new Player();
-    static Player p2 = new Player();
 
-    String winner = null;
-    static String name, turn;
-
- public static String fun(String S) {
+  //Method to return the player's symbol concatenated 3 times to match the rows.
+ public static String tripleSym(String S) {
         return S.concat(S.concat(S));
     }
 
@@ -66,21 +72,21 @@ static String[] board;
                     break;
             }
 
-            String val1 = fun(p1.getCharacter());
-            String val2 = fun(p2.getCharacter());
             // For P1 winner
-            if (line.equals(val1)) {
+            // For P1 winner
+            if (line.equals(tripleSym(p1.getCharacter()))) {
                 p1.setScore(1);
                 return p1.getName();
             }
 
             // For P2 winner
-            else if (line.equals(val2)) {
+            else if (line.equals(tripleSym(p2.getCharacter()))) {
                 p2.setScore(1);
                 return p2.getName();
             }
         }
 
+      // For draw
         for (int a = 0; a < 9; a++) {
             if (Arrays.asList(board).contains(String.valueOf(a + 1))) {
                 break;
