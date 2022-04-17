@@ -126,6 +126,7 @@ public class Board {
           }
           else
           {
+            sc.nextLine(); // Clears Buffer
             //Keep on running the loop until either 1 or 0 is entered.
             continue;
           }
