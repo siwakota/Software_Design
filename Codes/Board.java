@@ -98,4 +98,14 @@ public class Board {
        // To enter the Player's character at the exact place on board.
         System.out.print(name + "'s turn; Enter a slot number to place your character in: ");
         return null;
+  
+      
+      public void startGame() {
+   
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to 3x3 TIC TAC TOE");
+        board = new String[9];
+        initializeBoard();
+        printBoard();
+ }
 }
