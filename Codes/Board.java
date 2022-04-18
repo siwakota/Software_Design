@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Board {
 
-    Scanner sc = new Scanner(System.in);        //An object of scanner class to get user inputs
+    Scanner sc = new Scanner(System.in); // An object of scanner class to get user inputs
 
     // New players p1 and p2 of Player class added.
     static Player p1 = new Player();
@@ -20,7 +20,7 @@ public class Board {
     // To store the slot number entered by user.
     int slotNum;
 
-    //Prints the board
+    // Prints the board
     static void printBoard() {
         System.out.println("|---|---|---|");
         System.out.println("| " + board[0] + " | "
@@ -110,9 +110,8 @@ public class Board {
     // Method to enter into the game.
     public void startGame() {
 
-        while (true) 
-        {
-            //Prompts to ask player's name and character.
+        while (true) {
+            // Prompts to ask player's name and character.
             System.out.print("Please enter the name of the player 1: ");
             String player1Name = sc.nextLine();
             System.out.print("Please enter your character: ");
@@ -124,17 +123,17 @@ public class Board {
             String sym2 = Character.toString(sc.next().charAt(0));
             sc.nextLine();
 
-            //Sets Player's name and symbol
+            // Sets Player's name and symbol
             p1.setName(player1Name);
             p1.setCharacter(sym1);
             p2.setName(player2Name);
             p2.setCharacter(sym2);
 
-            //Displays Player's Name
+            // Displays Player's Name
             System.out.println(p1.getName() + " vs. " + p2.getName());
             System.out.println("--------------------");
 
-            //Sets turn for the first player
+            // Sets turn for the first player
             turn = p1.getCharacter();
 
             Board.printBoard();
@@ -195,7 +194,7 @@ public class Board {
                 System.out.println(p1.getName() + "'s Score: " + p1.getScore());
                 System.out.println(p2.getName() + "'s Score: " + p2.getScore());
                 System.out.print("Enter 1 to continue playing or 0 to exit: ");
-                
+
                 if (sc.nextInt() != 1 || sc.nextInt() == 0) {
                     break;
                 }
